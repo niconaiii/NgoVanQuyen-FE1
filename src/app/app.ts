@@ -9,8 +9,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   title = 'my-app';
-  fullName = 'Angular 15';
-  age = 10;
+  fullName = 'Ngô Văn Quyền';
+  age = 20;
 
   sayHello(){
     console.log("hello");
