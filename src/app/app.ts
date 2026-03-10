@@ -9,11 +9,19 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   title = 'my-app';
-  fullName = 'Ngô Văn Quyền';
+  fullName = 'Angular';//Bai 2
+  subject = 'Angular Framework';//Bai 2
+  
+  name = "Nguyen Van A";
   age = 20;
+  
+  
+    sayHello(){
+      console.log("hello");
+      alert('hello ' + this.fullName)
+    }
 
-  sayHello(){
-    console.log("hello");
-    alert('hello ' + this.fullName)
-  }
+    clickMe(){
+      alert("Bạn đã click button");
+    }
 }
