@@ -1,0 +1,21 @@
+.story-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  max-width: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.story-image {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+th, td{
+     border: 1px solid black;
+}
