@@ -1,0 +1,37 @@
+<div class="container">
+  <h2 class="title">Thêm San pham</h2>
+
+  <form [formGroup]="addProForm" (ngSubmit)="submitForm()" class="form">
+    <div class="form-group">
+      <label for="name" class="label">Name</label>
+      <input type="text" id="name" formControlName="name" class="input"/>
+      @if (name?.invalid && name?.touched) {
+        <p>name không hợp lệ</p>
+    }
+    </div>
+
+    <div class="form-group">
+      <label for="price" class="label">Price</label>
+      <input type="number" id="price" formControlName="price" class="input"/>
+      @if (price?.invalid && price?.touched) {
+        <p>price không hợp lệ</p>
+    }
+    </div>
+
+    <div class="form-group">
+      <label for="category" class="label">Category</label>
+      <select id="category" formControlName="category" class="input">
+        <option value="" hidden></option>
+        <option value="Pro1">Pro1</option>
+        <option value="Pro2">Pro2</option>
+        <option value="Pro3">Pro3</option>
+      </select>
+      @if (category?.invalid && category?.touched) {
+        <p>category không hợp lệ</p>
+    }
+    </div>
+
+
+    <button type="submit" class="btn">Thêm sản phẩm</button>
+  </form>
+</div>

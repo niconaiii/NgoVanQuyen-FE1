@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 class="title">Đăng ký</h2>
+
+  <form [formGroup]="addReForm" (ngSubmit)="submitForm()" class="form">
+    <div class="form-group">
+      <label for="username" class="label">Username</label>
+      <input type="text" id="username" formControlName="username" class="input" />
+      @if (username?.invalid && username?.touched) {
+        <p>Username không hợp lệ</p>
+    }
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="label">Email</label>
+      <input type="email" id="email" formControlName="email" class="input" />
+      @if (email?.invalid && email?.touched) {
+        <p>email không hợp lệ</p>
+    }
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="label">Password</label>
+        <input type="password" id="password" formControlName="password" class="input" />
+        @if (password?.invalid && password?.touched) {
+        <p>Password không hợp lệ</p>
+    }
+    </div>
+
+    <button type="submit" class="btn">Đăng ký</button>
+  </form>
+</div>
