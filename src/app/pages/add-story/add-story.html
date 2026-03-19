@@ -5,6 +5,9 @@
     <div class="form-group">
       <label for="title" class="label">Tên truyện</label>
       <input type="text" id="title" formControlName="title" class="input" placeholder="Nhập tên truyện" />
+      @if(title?.invalid && title?.touched){
+        <p style="color: red;">Tiêu đề ko được để trống</p>
+      }
     </div>
 
     <div class="form-group">

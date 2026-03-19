@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -10,7 +11,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class AddStory {
   addForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  loading = false;
+  error = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+  ) {
     this.addForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(3)]],
       author: ['', [Validators.required, Validators.minLength(3)]],
@@ -18,6 +25,26 @@ export class AddStory {
     });
   }
   submitForm() {
-    console.log(this.addForm.value);
+    console.log('Form', this.addForm.value);
+
+    this.loading = true;
+    this.error = '';
+
+    const data = this.addForm.value;
+
+    this.http.post('http://localhost:3000/stories', data).subscribe({
+      next: () => {
+        this.loading = false;
+        alert('Them thanh cong');
+        this.addForm.reset();
+      },
+      error: () => {
+        this.loading = false;
+        alert('Them that bai');
+      },
+    });
+  }
+  get title() {
+    return this.addForm.get('title');
   }
 }

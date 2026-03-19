@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -10,12 +11,18 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class AddProduct {
   addProForm: FormGroup;
 
-  constructor(private fb: FormBuilder){
+  loading = false;
+  error = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+  ) {
     this.addProForm = this.fb.group({
       name: ['', Validators.required],
       price: [0, Validators.min(1)],
-      category: ['']
-    })
+      // category: ['']
+    });
   }
 
   get name() {
@@ -24,12 +31,28 @@ export class AddProduct {
   get price() {
     return this.addProForm.get('price');
   }
-  get category() {
-    return this.addProForm.get('category');
-  }
+  // get category() {
+  //   return this.addProForm.get('category');
+  // }
 
-  submitForm(){
+  submitForm() {
+    this.loading = true;
+    this.error = '';
     console.log(this.addProForm.value);
-    
+
+    const data = this.addProForm.value;
+
+    this.http.post('http://localhost:3000/products', data).subscribe({
+      next: () => {
+        this.loading = false;
+        alert("Them than cong")
+        this.addProForm.reset();
+      },
+      error: () => {
+        this.loading = false;
+        alert('them that bai')
+      }
+    })
+
   }
 }
