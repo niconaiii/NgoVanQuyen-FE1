@@ -1,54 +1,51 @@
-<!-- @for (story of stories; track story.title) {
-  @if (story.views > 90000) {
-    <div class="story-card">
-      <h3>{{ story.title }}</h3>
-
-      <p>Tác giả: {{ story.author }}</p>
-
-      <p>Lượt xem: {{ story.views }}</p>
-
-      <p>Năm phát hành: {{ story.release }}</p>
-
-      <p>Thể loại: {{ story.category }}</p>
-
-      <img
-        [src]="story.image"
-        alt="Hình ảnh {{ story.title }}"
-        class="story-image"
-        style="width: 100px"
-      />
-    </div>
-  } 
-}@if (stories.length === 0) {
-    <p>Không có truyện nào</p>
-  } -->
-<table style="border: 1px solid black;">
-    <thead>
+<h2>Danh sách truyện</h2>
+@if (loading) {
+  <p>Đang tải dữ liệu...</p>
+}
+@if (error) {
+  <p style="color: red">{{ error }}</p>
+}
+@if (!loading && stories.length === 0) {
+  <p>Không có truyện nào</p>
+}
+@if (stories.length > 0) {
+  <table border="1" [cellPadding]="10" [cellSpacing]="0">
+    <tr>
+      <th>ID</th>
+      <th>Tên Truyện</th>
+      <th>Tác Giả</th>
+      <th>Lượt xem</th>
+      <th>Hành động</th>
+    </tr>
+    @for (story of stories; track story.id) {
       <tr>
-        <th>STT</th>
-        <th>Hình ảnh</th>
-        <th>Tên truyện</th>
-        <th>Tác giả</th>
-        <th>Lượt xem</th>
-      </tr>
-    </thead>
-    <tbody>
-        @for (story of stories; track story.id) {
-      <tr>
-        <td style="padding:20px ;">{{ story.id }}</td>
-        <td style="display: flex; justify-content: center; align-items: center;">
-          <img
-            [src]="story.image"
-            alt="Hình ảnh {{ story.title }}"
-            class="story-image"
-            style="width: 50px"
-          />
+        <td>{{ story.id }}</td>
+        <td>{{ story.title }}</td>
+        <td>{{ story.author }}</td>
+        <td>{{ story.view }}</td>
+        <td>
+          <button (click)="deleteStory(story.id)">Xóa</button>
         </td>
-        <td style="padding:20px ;">{{ story.title }}</td>
-        <td style="padding:20px ;">{{ story.author }}</td>
-        <td style="padding:20px ;">{{ story.views }}</td>
-        <td><button (click)="handleClick(story.title)">Click me</button></td>
       </tr>
     }
-    </tbody>
+    <br>
+    <hr>
+    <h1 style="text-align: center; color: red; ">HOT</h1>
+    @for (story of stories; track story.id) {
+      
+      @if (story.view > 90000) {
+        
+        <tr>
+          
+          <td>{{ story.id }}</td>
+          <td>{{ story.title }}</td>
+          <td>{{ story.author }}</td>
+          <td>{{ story.view }}</td>
+          <td>
+            <button (click)="deleteStory(story.id)">Xóa</button>
+          </td>
+        </tr>
+      }
+    }
   </table>
+}

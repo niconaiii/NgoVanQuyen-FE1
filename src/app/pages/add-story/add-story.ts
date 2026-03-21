@@ -21,7 +21,7 @@ export class AddStory {
     this.addForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(3)]],
       author: ['', [Validators.required, Validators.minLength(3)]],
-      views: ['', Validators.min(0)],
+      view: ['', Validators.min(0)],
     });
   }
   submitForm() {
