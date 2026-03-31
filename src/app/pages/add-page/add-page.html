@@ -1,0 +1,50 @@
+<section class="min-h-screen bg-slate-100 py-10">
+  <div class="mx-auto w-full max-w-xl rounded-[28px] bg-white p-8 shadow-lg ring-1 ring-slate-200">
+    <div class="mb-6">
+      <h1 class="text-3xl font-semibold text-slate-900">Thêm truyện mới</h1>
+      <p class="mt-2 text-sm text-slate-500">Điền thông tin truyện ở bên dưới và nhấn nút để lưu.</p>
+    </div>
+
+    <form [formGroup]="addForm" (ngSubmit)="submitForm()" class="space-y-5">
+      <div>
+        <label for="title" class="mb-2 block text-sm font-medium text-slate-700">Tên truyện</label>
+        <input
+          type="text"
+          id="title"
+          formControlName="title"
+          placeholder="Nhập tên truyện"
+          class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
+        />
+      </div>
+
+      <div>
+        <label for="author" class="mb-2 block text-sm font-medium text-slate-700">Tác giả</label>
+        <input
+          type="text"
+          id="author"
+          formControlName="author"
+          placeholder="Nhập tên tác giả"
+          class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
+        />
+      </div>
+
+      <div>
+        <label for="view" class="mb-2 block text-sm font-medium text-slate-700">Lượt xem</label>
+        <input
+          type="number"
+          id="view"
+          formControlName="view"
+          placeholder="Nhập số lượt xem"
+          class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full rounded-2xl bg-cyan-600 px-5 py-3 text-base font-semibold text-white transition hover:bg-cyan-700"
+      >
+        Thêm truyện
+      </button>
+    </form>
+  </div>
+</section>

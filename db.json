@@ -1,0 +1,53 @@
+{
+  "stories": [
+    {
+      "title": "Hành Trình Rồng nước",
+      "author": "Nguyễn Văn B",
+      "view": 90,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Bí Ẩn Thành Phố Ngầm",
+      "author": "Lê Thị B",
+      "view": 900
+    },
+    {
+      "id": 3,
+      "title": "Ảo Mộng Hoàng Hôn",
+      "author": "Trần Minh C",
+      "view": 1470
+    },
+    {
+      "id": 4,
+      "title": "Công Thức Của Định Mệnh",
+      "author": "Phạm Quốc D",
+      "view": 1125
+    },
+    {
+      "id": 5,
+      "title": "Ngọn Lửa Băng Giá",
+      "author": "Hoàng Văn E",
+      "view": 1345
+    },
+    {
+      "id": 6,
+      "title": "Giấc Mơ Của Tinh Tú",
+      "author": "Nguyễn Thị F",
+      "view": 780
+    },
+    {
+      "id": 7,
+      "title": "Đấu Trường Ký Ức",
+      "author": "Mai Văn G",
+      "view": 1830
+    },
+    {
+      "id": 8,
+      "title": "Bậc Thầy Bóng Đêm",
+      "author": "Trương Thị H",
+      "view": 1610
+    }
+  ],
+  "users": []
+}
