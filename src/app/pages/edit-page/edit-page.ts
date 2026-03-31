@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ id: any
     private route: ActivatedRoute,
   ) {
     this.editForm = this.fb.group({
-      title: "",
+      title: ['', [Validators.required, Validators.minLength(3)]],
       author: "",
       view: ""
     })
