@@ -13,6 +13,8 @@ export class EditPage {
 editForm: FormGroup;
 id: any
 
+error = '';
+
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
@@ -42,6 +44,8 @@ id: any
   }
 
   submitForm(){
+    this.error = '';
+
     this.http.put(`http://localhost:3000/stories/${this.id}`, this.editForm.value).subscribe({
       next: () => {
         alert("Sửa TC")
@@ -50,6 +54,10 @@ id: any
         alert("Sửa TB")
       }
     })
+  }
+
+  get title() {
+    return this.editForm.get('title');
   }
 }
  

@@ -14,6 +14,9 @@
           formControlName="title"
           class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
         />
+        @if(title?.invalid && title?.touched){
+        <p style="color: red;">Tiêu đề ko được để trống</p>
+      }
       </div>
 
       <div>
