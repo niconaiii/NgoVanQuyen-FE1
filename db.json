@@ -1,0 +1,16 @@
+{
+  "stories": [
+    {
+      "title": "naruto ",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "ngoquyen03092006@gmail.com",
+      "password": "$2a$10$oVFvwTH5wl4g2si9ZMrKcONAw/JHA9VQY134eTOR0B8Xcrf5FuR2C",
+      "username": "Nikochado",
+      "id": 1
+    }
+  ]
+}
