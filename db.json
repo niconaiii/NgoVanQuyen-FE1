@@ -49,5 +49,11 @@
       "view": 1610
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "ngoquyen03092006@gmail.com",
+      "password": "$2a$10$dTPWcwIVKE.XpJN1G0EP6utAhpsv74ehrUmQCmTRs7iuqmlrJARyy",
+      "id": 1
+    }
+  ]
 }

@@ -1,0 +1,39 @@
+<div class="p-6">
+  <h1 class="text-2xl font-semibold mb-6">Login</h1>
+
+  <form [formGroup]="loginForm" class="space-y-6" (ngSubmit)="submitForm()">
+    <div>
+      <label htmlFor="email" class="block font-medium mb-1"> Email </label>
+      <input
+        formControlName="email"
+        type="email"
+        id="email"
+        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      @if(email?.invalid && email?.touched){
+        <p style="color: red;">Email ko được để trống</p>
+      }
+    </div>
+
+    <div>
+      <label htmlFor="password" class="block font-medium mb-1">
+        Password
+      </label>
+      <input
+        formControlName="password"
+        type="password"
+        id="password"
+        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      @if(password?.invalid && password?.touched){
+        <p style="color: red;">Password phải từ 6 kí tự trở lên</p>
+      }
+    </div>
+    <button
+      type="submit"
+      class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+    >
+      Submit
+    </button>
+  </form>
+</div>
